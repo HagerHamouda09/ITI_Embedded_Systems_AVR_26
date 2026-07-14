@@ -3,6 +3,9 @@
 ### **Lab 1:** Drive Eligibility Check
 Write a simple program that checks if a person can drive or not. The program should ask the user to enter their age. If the age is greater than or equal to 16, print a message stating they can drive; otherwise, print that they cannot drive.
 
+<img width="485" height="140" alt="image" src="https://github.com/user-attachments/assets/985cda0c-f8e2-4ca2-b125-9c347c815651" />
+
+
 **Code:**
 ```c
 #include <stdio.h>
@@ -39,6 +42,9 @@ Write a simple program that asks the user to enter their score and prints their 
 * `65 <= grade < 75` -> Good
 * `75 <= grade < 85` -> Very Good
 * `85 <= grade <= 100` -> Excellent
+
+  <img width="475" height="119" alt="image" src="https://github.com/user-attachments/assets/8120b2f3-4c29-4615-a056-a9e0e84fd910" />
+
 
 **Code:**
 
@@ -94,6 +100,9 @@ Available IDs are:
 * `1145` -> Mina
 * Any other ID should print "Wrong ID".
 
+<img width="421" height="104" alt="image" src="https://github.com/user-attachments/assets/6e3e4409-655b-4e7f-9e5e-12f404680300" />
+
+
 **Code:**
 
 ```c
@@ -138,6 +147,9 @@ int main()
 
 Write a code that prints the even numbers in the range from 0 to 20.
 *(Note: Solution 2 is more efficient because it eliminates the internal condition evaluation and increments directly by 2).*
+
+<img width="399" height="196" alt="image" src="https://github.com/user-attachments/assets/40798523-3fd9-42f3-804a-632995d40eae" />
+
 
 **Solution 1 (Using Condition):**
 
@@ -186,6 +198,9 @@ int main()
 
 Write a code that asks the user to enter 10 numbers and prints the total summation of those numbers.
 
+<img width="396" height="187" alt="image" src="https://github.com/user-attachments/assets/0903b8b1-06fd-4c79-85c0-1ad4a89bf354" />
+
+
 **Code:**
 
 ```c
@@ -215,6 +230,9 @@ int main()
 ### **Lab 3:** Input Validation Loop
 
 Write a code that asks the user to enter a number less than 100. The program shall keep looping and asking for input if the user enters a number greater than or equal to 100.
+
+<img width="461" height="187" alt="image" src="https://github.com/user-attachments/assets/72109962-4768-4703-a3b7-c7605e9f52b5" />
+
 
 **Code:**
 
@@ -246,6 +264,9 @@ int main()
 ### **Lab 4:** Number Countdown
 
 Write a code that asks the user to enter a number and displays a countdown from that number down to 0.
+
+<img width="532" height="250" alt="image" src="https://github.com/user-attachments/assets/896e59b8-7fa7-4e68-b587-96e60c8e9d1b" />
+
 
 **Solution 1 (Using While Loop):**
 
@@ -297,6 +318,8 @@ int main()
 ### **Lab 5:** Factorial Calculation
 
 Write a program in C to calculate the factorial of an integer entered by the user using a loop.
+
+<img width="429" height="174" alt="image" src="https://github.com/user-attachments/assets/f8ac4121-c585-4bdf-8062-da28c999e3ce" />
 
 **Solution 1 (Using While Loop):**
 
