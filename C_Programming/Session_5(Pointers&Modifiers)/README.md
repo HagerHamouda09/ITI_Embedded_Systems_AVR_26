@@ -90,10 +90,10 @@ Write a C code to print the size of all basic data types: `char`, `int`, `float`
 
 int main()
 {
-    printf("Size of char   = %zu byte(s)\n", sizeof(char));
-    printf("Size of int    = %zu byte(s)\n", sizeof(int));
-    printf("Size of float  = %zu byte(s)\n", sizeof(float));
-    printf("Size of double = %zu byte(s)\n", sizeof(double));
+    printf("Size of char   = %d byte(s)\n", sizeof(char));
+    printf("Size of int    = %d byte(s)\n", sizeof(int));
+    printf("Size of float  = %d byte(s)\n", sizeof(float));
+    printf("Size of double = %d byte(s)\n", sizeof(double));
 
     return 0;
 }
