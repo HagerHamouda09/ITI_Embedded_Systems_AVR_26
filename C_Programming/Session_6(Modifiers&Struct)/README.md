@@ -273,19 +273,19 @@ int main()
     u32 total = 0;
     
     printf("Enter Ahmed's Salary, Bonus, Deduction: ");
-    scanf("%u %u %u", &Ahmed.Salary, &Ahmed.Bonus, &Ahmed.Deduction);
+    scanf("%d %d %d", &Ahmed.Salary, &Ahmed.Bonus, &Ahmed.Deduction);
     
     printf("Enter Waleed's Salary, Bonus, Deduction: ");
-    scanf("%u %u %u", &Waleed.Salary, &Waleed.Bonus, &Waleed.Deduction);
+    scanf("%d %d %d", &Waleed.Salary, &Waleed.Bonus, &Waleed.Deduction);
     
     printf("Enter Amr's Salary, Bonus, Deduction: ");
-    scanf("%u %u %u", &Amr.Salary, &Amr.Bonus, &Amr.Deduction);
+    scanf("%d %d %d", &Amr.Salary, &Amr.Bonus, &Amr.Deduction);
     
     total = (Ahmed.Salary + Ahmed.Bonus - Ahmed.Deduction) + 
             (Waleed.Salary + Waleed.Bonus - Waleed.Deduction) + 
             (Amr.Salary + Amr.Bonus - Amr.Deduction);
     
-    printf("\nTotal value needed is : %u \n", total);
+    printf("\nTotal value needed is : %d \n", total);
     
     return 0;
 }
@@ -317,19 +317,19 @@ int main()
     u32 total = 0;
     
     printf("Enter Ahmed's Salary, Bonus, Deduction: ");
-    scanf("%u %u %u", &Ahmed.Salary, &Ahmed.Bonus, &Ahmed.Deduction);
+    scanf("%d %d %d", &Ahmed.Salary, &Ahmed.Bonus, &Ahmed.Deduction);
     
     printf("Enter Waleed's Salary, Bonus, Deduction: ");
-    scanf("%u %u %u", &Waleed.Salary, &Waleed.Bonus, &Waleed.Deduction);
+    scanf("%d %d %d", &Waleed.Salary, &Waleed.Bonus, &Waleed.Deduction);
     
     printf("Enter Amr's Salary, Bonus, Deduction: ");
-    scanf("%u %u %u", &Amr.Salary, &Amr.Bonus, &Amr.Deduction);
+    scanf("%d %d %d", &Amr.Salary, &Amr.Bonus, &Amr.Deduction);
     
     total = (Ahmed.Salary + Ahmed.Bonus - Ahmed.Deduction) + 
             (Waleed.Salary + Waleed.Bonus - Waleed.Deduction) + 
             (Amr.Salary + Amr.Bonus - Amr.Deduction);
     
-    printf("\nTotal value needed is : %u \n", total);
+    printf("\nTotal value needed is : %d \n", total);
     
     return 0;
 }
@@ -380,15 +380,15 @@ int main()
     };
         
     printf("Enter Student ID (1-10): ");
-    scanf("%u", &id);
+    scanf("%d", &id);
     
     if (id >= 1 && id <= 10)
     {
-        printf("\nGrades for Student %u:\n", id);
-        printf("Math      : %u\n", Class[id - 1].Math);
-        printf("Language  : %u\n", Class[id - 1].Lang);
-        printf("Physics   : %u\n", Class[id - 1].Physics);
-        printf("Chemistry : %u\n", Class[id - 1].Chemistry);
+        printf("\nGrades for Student %d:\n", id);
+        printf("Math      : %d\n", Class[id - 1].Math);
+        printf("Language  : %d\n", Class[id - 1].Lang);
+        printf("Physics   : %d\n", Class[id - 1].Physics);
+        printf("Chemistry : %d\n", Class[id - 1].Chemistry);
     }
     else
     {
