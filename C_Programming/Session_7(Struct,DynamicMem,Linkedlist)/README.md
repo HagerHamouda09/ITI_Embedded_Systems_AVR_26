@@ -197,13 +197,13 @@ int main()
 void differenceBetweenTimePeriod(TIME start, TIME stop, TIME *diff)
 {
     if(stop.seconds > start.seconds){
-        --start.minutes;
+        start.minutes--;
         start.seconds += 60;
     }
     diff->seconds = start.seconds - stop.seconds;
 
     if(stop.minutes > start.minutes){
-        --start.hours;
+        start.hours--;
         start.minutes += 60;
     }
     diff->minutes = start.minutes - stop.minutes;
