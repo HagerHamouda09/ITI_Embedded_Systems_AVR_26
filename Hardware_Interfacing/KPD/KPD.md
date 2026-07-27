@@ -1,4 +1,4 @@
-#  Session 1 Labs (Keypad & LCD Interfacing)
+#  Session 12 Labs (Keypad & LCD Interfacing)
 
 ### **Lab 1:** 3x3 Keypad Key Detection Displayed on LCD (Bare-Metal Scanning)
 Write an AVR C program to interface a $3\times3$ keypad matrix (`PORTB`) with a character LCD screen (`HAL LCD Driver`). 
