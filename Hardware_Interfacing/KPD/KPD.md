@@ -75,3 +75,52 @@ int main(void)
 
     return 0;
 }
+
+
+```
+
+
+
+ ### KPD & LCD WITH KPD DRIVER
+
+```c
+
+#define F_CPU 8000000UL
+
+#include "../LIB/STD_TYPES.h"
+#include "../MCAL/DIO/DIO_int.h"
+
+#include "../HAL/LCD/LCD_int.h"
+#include "../HAL/KPD/KPD_int.h"
+
+const u8 KeyMap[KPD_ROW][KPD_COL] =
+{
+    {'1','2','3'},
+    {'4','5','6'},
+    {'7','8','9'}
+};
+
+int main(void)
+{
+    u8 PressedKey;
+
+    MDIO_vInit();
+
+    HLCD_vInit();
+    HKPD_vInit();
+
+    while(1)
+    {
+        PressedKey = HKPD_u8GetPressedKey(KeyMap);
+
+        if(PressedKey != NO_KEY)
+        {
+            HLCD_vClearScreen();    
+            HLCD_vSendChar(PressedKey);
+        }
+    }
+
+    return 0;
+}
+
+```
