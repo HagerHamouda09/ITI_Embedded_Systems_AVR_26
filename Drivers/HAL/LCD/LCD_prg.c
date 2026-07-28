@@ -88,7 +88,7 @@ void HLCD_vPrintNumber(u32 A_u32Number)
 		A_u32Number/=10;
 		L_u8index++;
 	}
-	for(u8 L_u8index = 9; L_u8index >= 0; L_u8index--)
+	for(s8 L_u8index = 9; L_u8index >= 0; L_u8index--)
 	{
 		if(L_u8digits[L_u8index] == 0) continue;
 		HLCD_vSendChar(L_u8digits[L_u8index]);
