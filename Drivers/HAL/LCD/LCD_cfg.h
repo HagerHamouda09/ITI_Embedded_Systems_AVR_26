@@ -18,4 +18,5 @@
 #define LCD_DATA_PORT 	DIO_PORTD
 
 
+
 #endif /* HAL_LCD_LCD_CFG_H_ */
