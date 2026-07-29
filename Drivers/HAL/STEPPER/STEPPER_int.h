@@ -10,6 +10,8 @@
 
 #define STEPPER_PORT DIO_PORTA
 
+//Change these acording to the order of your stepper motor pins 
+
 #define STEPPER_BLUE DIO_PIN1
 #define STEPPER_PINK DIO_PIN0
 #define STEPPER_ORANGE DIO_PIN2
