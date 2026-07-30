@@ -46,6 +46,9 @@
 #define EXTI_INT2_SENSE_CTRL  EXTI_FALLING
 
 void MEXTI_vInit(void);
+void MEXTI_vCallBackFunction(void (*Fptr)(void), u8 A_u8InterruptNo);
+
+
 
 
 #endif /* MCAL_EXTI_EXTI_INT_H_ */

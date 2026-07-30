@@ -13,7 +13,8 @@
 #include "EXTI_int.h"
 #include "EXTI_prv.h"
 
-
+// array of function pointers
+static void (*G_EXTI_Callback[3])(void) = {NULL};
 
 void MEXTI_vInit(void)
 {
@@ -83,5 +84,41 @@ void MEXTI_vInit(void)
 	SET_BIT(GICR,5);
 #endif
 
+}
+
+void MEXTI_vCallBackFunction(void (*Fptr)(void), u8 A_u8InterruptNo)
+{
+	G_EXTI_Callback[A_u8InterruptNo] = Fptr;
+}
+
+void __vector_1(void) __attribute__((signal));
+void __vector_1(void)
+{
+	// call a specific function
+	if(G_EXTI_Callback[EXTI_INT0_ID] != NULL)
+	{
+		G_EXTI_Callback[EXTI_INT0_ID]();
+	}
+}
+
+void __vector_2(void) __attribute__((signal));
+void __vector_2(void)
+{
+	// call a specific function
+	if(G_EXTI_Callback[EXTI_INT1_ID] != NULL)
+	{
+		G_EXTI_Callback[EXTI_INT1_ID]();
+	}
+}
+
+
+void __vector_3(void) __attribute__((signal));
+void __vector_3(void)
+{
+	// call a specific function
+	if(G_EXTI_Callback[EXTI_INT2_ID] != NULL)
+	{
+		G_EXTI_Callback[EXTI_INT2_ID]();
+	}
 }
 
