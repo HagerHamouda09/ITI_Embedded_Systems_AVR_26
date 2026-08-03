@@ -1,0 +1,27 @@
+/*
+ * TMR_cfg.h
+ *
+ *  Created on: Aug 3, 2026
+ *      Author: Hager Adel
+ */
+
+#ifndef MCAL_TMR_TMR_CFG_H_
+#define MCAL_TMR_TMR_CFG_H_
+
+// ENABLE AND DISABLE TIMERS
+#define TIMER0_STATE				ENABLE
+
+#define TIMER0_MODE					NORMAL_OVERFLOW
+
+// CONFIGURE PRESCALLER
+#define CLK_SELECT_PRESCALER_TIM0	CLK_8
+
+//PWM OUTPUT MODES
+#define DISCONNECTED	0
+#define NON_INVERTING	1
+#define INVERTING		2
+
+#define PWM_OUTPUT_MODE	NON_INVERTING
+
+#define INTERRUPT_CONTROL	ENABLE
+#endif /* MCAL_TMR_TMR_CFG_H_ */
