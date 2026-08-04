@@ -22,6 +22,10 @@ typedef float f32;
 typedef double f64;
 
 
+#ifndef	NULL
+#define NULL	((void*)0)
+#endif
+
 
 #endif
 
