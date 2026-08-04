@@ -74,3 +74,132 @@ void LED_Toggle(void)
     /* Toggle LED on Pin PA0 */
     MDIO_vTogPinVal(DIO_PORTA, DIO_PIN0);
 }
+
+```
+
+#  Session 18 Labs (Timer0 CTC Mode & Fast PWM)
+
+### **Lab 1:** Variable Frequency Tone Generator (CTC Mode)
+
+<img width="934" height="488" alt="image" src="https://github.com/user-attachments/assets/7e8c25b1-7296-4d2a-8ec7-a429173aac05" />
+
+**Configuration:**
+```c
+#define TIMER0_MODE                CTC
+#define CLK_SELECT_PRESCALER_TIM0  CLK_8
+
+```
+
+**Code:**
+
+```c
+#define F_CPU 8000000UL
+
+#include "../LIB/STD_TYPES.h"
+#include "../MCAL/DIO/DIO_int.h"
+#include "../MCAL/GIE/GIE_int.h"
+#include "../MCAL/TMR/TMR_int.h"
+#include "../MCAL/ADC/ADC_int.h"
+
+void Buzzer_Toggle(void);
+
+int main(void)
+{
+    u16 ADC_Value;
+    u8 OCR_Value;
+
+    /* Initialize DIO Driver */
+    MDIO_vInit();
+
+    /* Configure PA1 as Output for Buzzer */
+    MDIO_vSetPinDir(DIO_PORTA, DIO_PIN1, DIO_OUTPUT);
+
+    /* Enable Global Interrupts & Peripheral Drivers */
+    MGIE_vEnableGlobalInterrupt();
+    MADC_vInit();
+    MTIMERS_vInit();
+
+    /* Initial Compare Match value = 100 (~101 µs interrupt interval) */
+    MTIMERS_vSetCompareMatch(TIM_0, 100);
+
+    /* Set Callback for Compare Match interrupt */
+    MTIMERS_vSetInterval_CTC(Buzzer_Toggle, 1);
+
+    /* Start Timer0 */
+    MTIMERS_vStartTimer(TIM_0);
+
+    while(1)
+    {
+        /* Read Analog Input on ADC Channel 0 */
+        ADC_Value = MADC_u16AnalogRead(CHANNEL_0);
+
+        /* Map 10-bit ADC (0-1023) to OCR Range (20-250) */
+        OCR_Value = 20 + ((u32)ADC_Value * 230) / 1023;
+
+        /* Update Compare Match Register dynamically */
+        MTIMERS_vSetCompareMatch(TIM_0, OCR_Value);
+    }
+
+    return 0;
+}
+
+void Buzzer_Toggle(void)
+{
+    MDIO_vTogPinVal(DIO_PORTA, DIO_PIN1);
+}
+
+```
+---
+
+### **Lab 2:** Potentiometer Controlled LED Dimmer (ADC + Fast PWM)
+
+<img width="860" height="449" alt="image" src="https://github.com/user-attachments/assets/1578f78d-bbd8-4267-94fa-3d6b83e8f32a" />
+
+**Configuration:**
+```c
+#define TIMER0_MODE                FAST_PWM
+#define CLK_SELECT_PRESCALER_TIM0  CLK_8
+
+```
+
+**Code:**
+
+```c
+#define F_CPU 8000000UL
+
+#include "../LIB/STD_TYPES.h"
+#include "../MCAL/DIO/DIO_int.h"
+#include "../MCAL/ADC/ADC_int.h"
+#include "../MCAL/TMR/TMR_int.h"
+
+int main(void)
+{
+    u16 ADC_Value;
+
+    /* Potentiometer Pin (PA0) -> Input */
+    MDIO_vSetPinDir(DIO_PORTA, DIO_PIN0, DIO_INPUT);
+
+    /* PWM Output Pin OC0 (PB3) -> Output */
+    MDIO_vSetPinDir(DIO_PORTB, DIO_PIN3, DIO_OUTPUT);
+
+    /* Initialize Drivers */
+    MADC_vInit();
+    MTIMERS_vInit();
+
+    /* Start Timer0 */
+    MTIMERS_vStartTimer(TIM_0);
+
+    while(1)
+    {
+        /* Read Potentiometer on Channel 0 */
+        ADC_Value = MADC_u16AnalogRead(CHANNEL_0);
+
+        /* Convert 10-bit ADC (0-1023) to 8-bit PWM (0-255) */
+        MTIMERS_vSetCompareMatch(TIM_0, ADC_Value / 4);
+    }
+
+    return 0;
+}
+
+```
+
