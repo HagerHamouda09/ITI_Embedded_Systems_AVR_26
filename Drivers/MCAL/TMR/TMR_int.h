@@ -10,6 +10,11 @@
 
 #define TIM_0	0
 
+//TIMER ITSELF
+#define TIM_1	1
+//Refers specifically to Output Compare Unit A of Timer1.
+#define TIM_1_A  2
+
 void MTIMERS_vInit(void);
 
 void MTIMERS_vStartTimer(u8 A_u8TimerID);
