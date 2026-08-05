@@ -45,7 +45,6 @@
 #define PWM_PHASE_CORRECT	1
 #define CTC					2
 #define FAST_PWM			3
-#define ICU		 			4
 
 /* --------------------------------- Registers ---------------------------------*/
 /* TCCR0 */

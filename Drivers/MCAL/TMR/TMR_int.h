@@ -16,6 +16,9 @@
 //Refers specifically to Output Compare Unit A of Timer1.
 #define TIM_1_A  2
 
+
+#define ICU		 			4
+
 // ICU
 #define TRIG_TYPE_RISING	0
 #define TRIG_TYPE_FALLING	1
