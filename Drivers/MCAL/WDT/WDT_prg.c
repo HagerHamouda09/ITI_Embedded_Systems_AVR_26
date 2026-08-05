@@ -24,12 +24,9 @@ void MWDT_vDisable(void)
 {
 	/* Set Bit 3&4 at the same CLK cycle  */
 	WDTCR |= 0b00011000 ;
-	/* WDTCR_WDE = 0 */
-	/* I don't care for any value in this Reg Cuz I want to Disable */
 	WDTCR = 0 ;
 }
 
-/* Hint : prebuild config  */
 void MWDT_vSleep(void)
 {
 	/* CLear The Prescaler bits  */
