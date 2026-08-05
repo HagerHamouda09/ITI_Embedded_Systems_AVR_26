@@ -1,5 +1,9 @@
 # Session 11 Labs (AVR HAL LCD Driver)
 
+### **LCD custom character generator**
+
+https://maxpromer.github.io/LCD-Character-Creator/ 
+
 ### **Lab 1:** Display Single Character on LCD
 Write your name on the LCD
 
