@@ -1,4 +1,4 @@
-#  Session 21 Labs (Watchdog Timer - WDT)
+#  Session 20 Labs (Watchdog Timer - WDT)
 
 ### **Lab 1:** Watchdog Timer Reset Verification (Blinking LED Cycle)
 Write an AVR C program to demonstrate the functionality of the **Watchdog Timer (WDT)**. 
