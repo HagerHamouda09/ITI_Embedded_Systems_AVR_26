@@ -1,4 +1,4 @@
-# Session 22 Labs (USART / UART Communication)
+# Session 20 Labs (USART / UART Communication)
 
 ### **Lab 1:** Periodic Character Transmission via USART
 Write an AVR C program to continuously transmit character sequence signals (`'A'`, `'B'`, `'C'`) over the serial TX line with a **500 ms delay** between transmissions.
