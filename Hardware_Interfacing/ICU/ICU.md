@@ -15,8 +15,6 @@ Implement a system that takes an input PWM and display its frequency and duty cy
 3. **Display Output:** Computes frequency ($f = \frac{10^6}{T_{\text{total}}}$) and duty cycle ($D\% = \frac{T_{\text{ON}} \times 100}{T_{\text{total}}}$), renders them on a 16x2 LCD screen, and re-enables ICU captures after a 300 ms sampling delay.
 
 
-<img width="848" height="454" alt="image" src="https://github.com/user-attachments/assets/eb7aa06a-ee74-49c6-942f-1f002f24a10e" />
-
 **Configuration:**
 ```c
 #define TIMER0_MODE                FAST_PWM
