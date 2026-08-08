@@ -47,13 +47,13 @@ void MSPI_vTransmit(u8 A_u8Byte)
 	SPDR = A_u8Byte;
 
 	/* Wait for transmission complete */
-	while(!GET_BIT(SPSR, SPIF))
+	while(!GET_BIT(SPSR, 7))
 		;
 }
 u8 MSPI_u8Receive(void)
 {
 	/* Wait for reception complete */
-	while(!GET_BIT(SPSR, SPIF))
+	while(!GET_BIT(SPSR, 7))
 		;
 	/* Return data register */
 	return SPDR;
@@ -66,7 +66,7 @@ u8 MSPI_vTransceive(u8 A_u8Byte)
 	SPDR = A_u8Byte;
 
 	/* Wait for transmission complete */
-	while(!GET_BIT(SPSR, SPIF))
+	while(!GET_BIT(SPSR, 7))
 		;
 
 	/* Return data register */
